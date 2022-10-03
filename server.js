@@ -12,7 +12,14 @@ app.set("view engine", "ejs");
 const newsRouter = require(path.join(__dirname, "src/routes/news.js"));
 
 
+
 app.get("/", newsRouter);
+app.get("/business", newsRouter);
+app.get("/technology", newsRouter);
+app.get("/entertainment", newsRouter);
+app.get("/science", newsRouter);
+app.get("/sport", newsRouter);
+app.get("/health", newsRouter)
 
 
 app.listen(3000, ()=> {

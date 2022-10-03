@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +27,13 @@ header nav {
 
 header a {
     color: aliceblue;
+    font-family: 'Satisfy', cursive;
+
+}
+
+#logo a{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
 }
 
 #nav-list li {
@@ -41,19 +52,42 @@ header a {
     color: black;
   }
 
-#news {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 25px 50px;
-    gap: 20px;
+  #heading {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Satisfy', cursive;
+  }
 
+#news {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center; */
-    
-    padding: 20px 10%;
+    align-items: center;
 }
 
 img {
-    width: 80%;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.article {
+    width: 90%;
+    border-bottom: 2px solid #14213d;
+    padding: 25px;
+}
+
+.description, .author {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    opacity: 0.9;
+    
+}
+
+.title {
+    font-size: 19px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.content {
+    font-family: 'Old Standard TT', serif;
 }

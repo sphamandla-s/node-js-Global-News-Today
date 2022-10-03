@@ -5,40 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Fake News</title>
+    <title>Global News Today</title>
 </head>
 <body>
 
     <%- include("partails/news_header"); %>
 
-    <h1>Top trading news around the Global</h1>
+    <div id="heading">
+        <h1>Top trading <span id="category"></span> news around the Globe</h1>
+    </div>
+
+    
 
     <article id="news">
         <% newsData.articles.forEach(element => { %>
             <% if (element.urlToImage) { %>
                 <div class="article">
-                    <div id="title">
+                    <div class="title">
                         <h2><%= element.title %> </h2>
                     </div>
-                    <div id="img">
+                    <div class="img">
                         <% if (element.urlToImage) { %>
                             <img src="<%= element.urlToImage %>" alt="">
                         <% } %>
                     </div>
-                    <div id="date">
-                        <h6><%= element.publishedAt %></h6>
+                    <div class="date">
+                        <h6>Published at <%= element.publishedAt %></h6>
                     </div>
         
-                    <div id="description">
+                    <div class="description">
                         <h4><%= element.description %> </h4>
                     </div>
-                    <div id="content">
-                        <p><%= element.content %>  <a href="<%= element.url %> "> Read more on <%= element.source.name %> </a></p>
-                    </div>
-                    <div id="source">
+                    <div class="author">
                         <% if (element.author) { %>
                             <h5>By <%= element.author %> </h5>
                         <% } %>
+                    </div>
+                    <div  class="content">
+                        <p><%= element.content %>  <a href="<%= element.url %> "> Read more on <%= element.source.name %> </a></p>
+                    </div>
+                    <div class="source">
                         <h5>Source: <%= element.source.name %></h5>
                     </div>
                 </div>
@@ -46,5 +52,8 @@
         <% }) %>
         
     </article>
+
+
+    <script src="/javascript/app.js"></script>
 </body>
 </html>
