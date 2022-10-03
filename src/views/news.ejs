@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Fake News</title>
+</head>
+<body>
+
+    <%- include("partails/news_header"); %>
+
+    <h1>Top trading news around the Global</h1>
+
+    <article id="news">
+        <% newsData.articles.forEach(element => { %>
+            <% if (element.urlToImage) { %>
+                <div class="article">
+                    <div id="title">
+                        <h2><%= element.title %> </h2>
+                    </div>
+                    <div id="img">
+                        <% if (element.urlToImage) { %>
+                            <img src="<%= element.urlToImage %>" alt="">
+                        <% } %>
+                    </div>
+                    <div id="date">
+                        <h6><%= element.publishedAt %></h6>
+                    </div>
+        
+                    <div id="description">
+                        <h4><%= element.description %> </h4>
+                    </div>
+                    <div id="content">
+                        <p><%= element.content %>  <a href="<%= element.url %> "> Read more on <%= element.source.name %> </a></p>
+                    </div>
+                    <div id="source">
+                        <% if (element.author) { %>
+                            <h5>By <%= element.author %> </h5>
+                        <% } %>
+                        <h5>Source: <%= element.source.name %></h5>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %>
+        
+    </article>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+header {
+    background-color: black;
+    border-bottom: 2px solid aliceblue;
+    padding: 20px 10px;
+    
+
+}
+
+header nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: aliceblue;
+}
+
+header a {
+    color: aliceblue;
+}
+
+#nav-list li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+#search input {
+    border-radius: 100px;
+    border: 2px rgb(0, 0, 66) solid;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+::placeholder {
+    color: black;
+  }
+
+#news {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px 50px;
+    gap: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    
+    padding: 20px 10%;
+}
+
+img {
+    width: 80%;
+}
