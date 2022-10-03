@@ -81,4 +81,16 @@ newsRouter.get("/health", async(request, response)=> {
     }
 })
 
+newsRouter.post("/search", async(request, response)=> {
+    const search = request.body.search;
+    try { 
+        const newsApi = await axios.get(`https://newsapi.org/v2/everything?q=${search}&from=2022-09-03&sortBy=publishedAt&apiKey=103bfa8ee87041348470cfa39f4609e2`);
+        response.render("news", { newsData : newsApi.data })
+        
+    } catch (error) {
+        response.render("server-error");
+        
+    }
+})
+
 module.exports = newsRouter;
